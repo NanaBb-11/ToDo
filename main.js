@@ -13,15 +13,7 @@ const navigation = {
 }
 
 function addTask(task, status, priority){
-    let indexTask = list.find(person => person.name === task);
-    try {
-        if (indexTask) throw new Error('Подобная задача уже на месте');
-        list.push({name: task, status: status,priority: priority});
-    }
-    catch (e){
-        if (e.name === 'Error')     alert( "Error: " + e.message );
-        else    throw e;
-    }
+    list.push({name: task, status: status,priority: priority});
 }
 function deleteTask(task){
     let indexTask = list.findIndex(person => person.name === task);
